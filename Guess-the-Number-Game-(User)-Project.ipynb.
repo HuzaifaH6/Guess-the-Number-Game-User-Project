@@ -1,0 +1,83 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNYXtOKR+IOb+mwgX+Pz8Gl",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/HuzaifaH6/Guess-the-Number-Game-User-Project/blob/main/Guess-the-Number-Game-(User)-Project.ipynb.\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 23,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yFpvwtBST1wH",
+        "outputId": "25f460e0-0316-4a89-da87-70bdd2cc0ce2"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Is 98 too high (H) , too low (L) or correct (C) ??? c\n",
+            "Congrats! The computer guess your number, 98, correctly in 1 attempts.\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "\n",
+        "def computer_guess():\n",
+        "    low = 1\n",
+        "    high = 100\n",
+        "    attempts = 0\n",
+        "    feedback = \" \"\n",
+        "\n",
+        "    while ( feedback != \"c\"):\n",
+        "        if low != high:\n",
+        "            guess = random.randint(low, high)\n",
+        "            attempts += 1\n",
+        "\n",
+        "        else:\n",
+        "            guess = high\n",
+        "\n",
+        "\n",
+        "        feedback = input(f\"Is {guess} too high (H) , too low (L) or correct (C) ??? \")\n",
+        "\n",
+        "\n",
+        "        if ( feedback == \"h\" ):\n",
+        "          high = guess - 1\n",
+        "\n",
+        "        elif ( feedback == \"l\" ):\n",
+        "          low = guess + 1\n",
+        "\n",
+        "        else:\n",
+        "          print(f\"Congrats! The computer guess your number, {guess}, correctly in {attempts} attempts.\")\n",
+        "\n",
+        "computer_guess()\n"
+      ]
+    }
+  ]
+}
